@@ -1,5 +1,3 @@
-package baekjoon.greedy;
-
 /**
  * 인하은행에는 ATM이 1대밖에 없다. 지금 이 ATM앞에 N명의 사람들이 줄을 서있다.
  *
@@ -25,5 +23,37 @@ package baekjoon.greedy;
  *
  * 줄을 서 있는 사람의 수 N과 각 사람이 돈을 인출하는데 걸리는 시간 Pi가 주어졌을 때, 각 사람이 돈을 인출하는데 필요한 시간의 합의 최솟값을 구하는 프로그램을 작성하시오.
  */
+
+package baekjoon.greedy;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class Q16399 {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int input = sc.nextInt();
+
+        int[] arr = new int[input];
+
+        for(int i = 0; i < input; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        Arrays.sort(arr);
+
+        int acc = 0; // 1 2 3 3 4
+        int prev = 0;
+        for (int i = 0; i < arr.length; i++) {
+            prev += arr[i];
+            acc += prev;
+        }
+
+        System.out.println(acc);
+
+        sc.close();
+    }
 }
