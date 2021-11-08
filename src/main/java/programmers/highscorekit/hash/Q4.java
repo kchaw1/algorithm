@@ -1,7 +1,6 @@
 package programmers.highscorekit.hash;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class Q4 <T> {
     public static void main(String[] args) {
