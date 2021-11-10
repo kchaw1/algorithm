@@ -4,12 +4,16 @@ import java.io.InputStreamReader;
 import java.io.StringReader;
 import java.util.Scanner;
 import java.util.StringTokenizer;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Test {
     public static void main(String[] args) throws IOException {
 
-        String a = "123456789";
+        String regex = "(a*)|([a-z])";
 
-        System.out.println(a.substring(0, a.length()-1));
+        String s = "aaaaaaaaaaaaaabcaaa";
+
+        System.out.println(s.matches(regex));
     }
 }
