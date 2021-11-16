@@ -1,7 +1,5 @@
 package baekjoon.stepbystep.math2;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Q11653 {
@@ -12,12 +10,14 @@ public class Q11653 {
 
         int num = sc.nextInt();
 
-        List<Integer> result = new ArrayList<>();
-
-        int copy = num;
-        for (int i = 1; i <= num; i++) {
+        int start = 2;
+        while (num != 1) {
+            if (num % start == 0) {
+                num /= start;
+                System.out.println(start);
+            } else {
+                start++;
+            }
         }
-
-
     }
 }
