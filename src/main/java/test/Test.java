@@ -1,19 +1,55 @@
-package test;
+package test;// Java program to implement
+// the above approach
+import java.util.*;
 
-import java.util.ArrayList;
-import java.util.List;
+class Test {
 
-public class Test {
-    public static void main(String[] args) {
-        List<Integer> list = new ArrayList<>();
+    // Function to find minimum
+    // number of fountains to be
+    // activated
+    static int minCntFoun(int a[], int N)
+    {
+        int[] dp = new int[N];
+        for(int i=0;i<N;i++)
+        {
+            dp[i]=-1;
+        }
 
-        list.add(4);
-        list.add(2);
-        list.add(3);
-        list.add(1);
+        int idxLeft;
+        int idxRight;
 
-        list.sort(Integer::compareTo);
+        for (int i = 0; i < N; i++)
+        {
+            idxLeft = Math.max(i - a[i], 0);
+            idxRight = Math.min(i + (a[i] + 1), N);
+            dp[idxLeft] = Math.max(dp[idxLeft],
+                    idxRight);
+        }
+        int cntfount = 1;
 
-        System.out.println(list);
+        int idxNext = 0;
+        idxRight = dp[0];
+
+        for (int i = 0; i < N; i++)
+        {
+            idxNext = Math.max(idxNext, dp[i]);
+            if (i == idxRight)
+            {
+                cntfount++;
+                idxRight = idxNext;
+            }
+        }
+        return cntfount;
+    }
+
+    // Driver Code
+    public static void main(String[] args)
+    {
+        int a[] = { 1, 2, 1 };
+        int N = a.length;
+
+        System.out.print(minCntFoun(a, N));
     }
 }
+
+// This code is contributed by Amit Katiyar
