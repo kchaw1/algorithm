@@ -2,7 +2,6 @@ package programmers.level.level2;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.IntStream;
 
 public class Q84512 {
     static List<String> list = new ArrayList<>();
