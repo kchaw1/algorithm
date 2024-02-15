@@ -9,6 +9,7 @@ public class Q84512 {
 
     public static void main(String[] args) {
         System.out.println(solution("UUUUU"));
+        System.out.println(list);
     }
 
     public static int solution(String word) {
